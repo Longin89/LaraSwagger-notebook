@@ -1,0 +1,468 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My Swagger Doc",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/v1/notes": {
+            "get": {
+                "tags": [
+                    "Note"
+                ],
+                "summary": "Get all notes",
+                "operationId": "d50b71cc43fb51ff6fc0721fde50f521",
+                "responses": {
+                    "200": {
+                        "description": "Done",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 5
+                                                    },
+                                                    "fio": {
+                                                        "type": "string",
+                                                        "example": "Ivanov Ivan Ivanovich"
+                                                    },
+                                                    "phone": {
+                                                        "type": "integer",
+                                                        "example": "89998887766"
+                                                    },
+                                                    "company": {
+                                                        "type": "string",
+                                                        "example": "Google"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "test@mail.ru"
+                                                    },
+                                                    "birthday": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "1990-01-01"
+                                                    },
+                                                    "photo": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-11-14T14:53:10.000000Z"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2023-11-14T14:53:10.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "meta": {
+                                            "properties": {
+                                                "CurrentPage": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                },
+                                                "LastPage": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "PerPage": {
+                                                    "type": "integer",
+                                                    "example": 2
+                                                },
+                                                "Total": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Note"
+                ],
+                "summary": "Adds a new note",
+                "operationId": "7ab23973aed2721f8a1c50897e4f6f35",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "fio": {
+                                                "type": "string",
+                                                "example": "Ivanov Ivan Ivanovich"
+                                            },
+                                            "phone": {
+                                                "type": "integer",
+                                                "example": "89998887766"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Google"
+                                            },
+                                            "email": {
+                                                "type": "email",
+                                                "example": "test@mail.ru"
+                                            },
+                                            "birthday": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "1990-01-01"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "NULL"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Note added",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "fio": {
+                                                    "type": "string",
+                                                    "example": "Ivanov Ivan Ivanovich"
+                                                },
+                                                "phone": {
+                                                    "type": "integer",
+                                                    "example": "89998887766"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Google"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "test@mail.ru"
+                                                },
+                                                "birthday": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "1990-01-01"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-11-14T14:53:10.000000Z"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2023-11-14T14:53:10.000000Z"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Запись успешно создана"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": "201"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notes/{note}": {
+            "get": {
+                "tags": [
+                    "Note"
+                ],
+                "summary": "Get one note",
+                "operationId": "fb0a3d81620fbd7906375e7744c67906",
+                "parameters": [
+                    {
+                        "name": "note",
+                        "in": "path",
+                        "description": "Note ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Done",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "content": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                },
+                                                "fio": {
+                                                    "type": "string",
+                                                    "example": "Ivanov Ivan Ivanovich"
+                                                },
+                                                "phone": {
+                                                    "type": "integer",
+                                                    "example": "89998887766"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Google"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "test@mail.ru"
+                                                },
+                                                "birthday": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "1990-01-01"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-11-14T14:53:10.000000Z"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2023-11-14T14:53:10.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Успешный вывод элемента"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Note"
+                ],
+                "summary": "Update one note",
+                "operationId": "bcb0b3825b5f935e8e7ec7abd225ab9e",
+                "parameters": [
+                    {
+                        "name": "note",
+                        "in": "path",
+                        "description": "Note ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "fio": {
+                                                "type": "string",
+                                                "example": "Ivanov Ivan Ivanovich"
+                                            },
+                                            "phone": {
+                                                "type": "integer",
+                                                "example": "89998887766"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Google"
+                                            },
+                                            "email": {
+                                                "type": "email",
+                                                "example": "test@mail.ru"
+                                            },
+                                            "birthday": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "1990-01-01"
+                                            },
+                                            "photo": {
+                                                "type": "file",
+                                                "example": "NULL"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Done",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "fio": {
+                                                    "type": "string",
+                                                    "example": "Ivanov Ivan Ivanovich"
+                                                },
+                                                "phone": {
+                                                    "type": "integer",
+                                                    "example": "89998887766"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Google"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "test@mail.ru"
+                                                },
+                                                "birthday": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "example": "1990-01-01"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": null
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-11-14T14:53:10.000000Z"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2023-11-14T14:53:10.000000Z"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Запись успешно обновлена"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Note"
+                ],
+                "summary": "Delete item",
+                "operationId": "8ae4e4bfd8ef4a7cf3d7ea5fbdc166eb",
+                "parameters": [
+                    {
+                        "name": "note",
+                        "in": "path",
+                        "description": "Note ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Done",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Запись успешно удалена"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Note",
+            "description": "Note"
+        }
+    ]
+}
